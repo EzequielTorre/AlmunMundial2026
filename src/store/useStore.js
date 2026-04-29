@@ -1,49 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-// Datos iniciales de ejemplo
-const initialTeams = [
-  {
-    id: "arg",
-    name: "Argentina",
-    flag: "🇦🇷",
-    description:
-      "Tricampeones del mundo. La Albiceleste busca defender su título en 2026.",
-  },
-  {
-    id: "bra",
-    name: "Brasil",
-    flag: "🇧🇷",
-    description: "Pentacampeones. Siempre favoritos con su Jogo Bonito.",
-  },
-  {
-    id: "fra",
-    name: "Francia",
-    flag: "🇫🇷",
-    description:
-      "Bicampeones. Una potencia europea con talento joven y dinámico.",
-  },
-  {
-    id: "esp",
-    name: "España",
-    flag: "🇪🇸",
-    description:
-      "Campeones en 2010. Famosos por su estilo de juego de posesión.",
-  },
-  {
-    id: "usa",
-    name: "Estados Unidos",
-    flag: "🇺🇸",
-    description: "Co-anfitriones de 2026. Buscando hacer historia en casa.",
-  },
-  {
-    id: "mex",
-    name: "México",
-    flag: "🇲🇽",
-    description:
-      "Co-anfitriones de 2026. El Tri quiere alcanzar el ansiado quinto partido.",
-  },
-];
+import { initialTeams } from "./teamsData";
 
 export const useStore = create(
   persist(
@@ -122,7 +79,7 @@ export const useStore = create(
         }),
     }),
     {
-      name: "album-digital-storage",
+      name: "album-digital-storage-v2", // Modificado para refrescar la lista de equipos nueva en el localStorage
     },
   ),
 );
