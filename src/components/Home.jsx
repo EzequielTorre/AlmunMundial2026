@@ -25,10 +25,13 @@ function Home() {
             <Link to={`/team/${team.id}`} className="text-decoration-none">
               <div className="card h-100 shadow-sm border border-secondary-subtle team-card-hover transition-all bg-body theme-transition">
                 <div className="card-body d-flex flex-column align-items-center justify-content-center py-5">
-                  <div className="display-1 mb-4 drop-shadow-flag transition-all">
+                  <div
+                    className="display-1 mb-4 drop-shadow-flag transition-all"
+                    style={{ fontSize: "5rem" }}
+                  >
                     {team.flag}
                   </div>
-                  <h5 className="card-title fw-bold text-body m-0 text-uppercase tracking-wide">
+                  <h5 className="card-title fw-bold text-body m-0 text-uppercase tracking-wide text-center">
                     {team.name}
                   </h5>
                 </div>

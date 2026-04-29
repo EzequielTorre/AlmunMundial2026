@@ -84,8 +84,8 @@ function TeamPage() {
     }
   };
 
-  // Generar 11 espacios para los jugadores (11 titular)
-  const slots = Array.from({ length: 11 }, (_, i) => i);
+  // Generar 26 espacios para los jugadores (Plantel máximo permitido en el Mundial 2026)
+  const slots = Array.from({ length: 26 }, (_, i) => i);
 
   return (
     <div className="container py-4">
@@ -97,24 +97,35 @@ function TeamPage() {
             onClick={() => navigate(prevTeam ? `/team/${prevTeam.id}` : "/")}
             disabled={!prevTeam && teamIndex === 0}
           >
-            <ArrowLeft size={18} /> <span className="d-none d-sm-inline fw-medium">Anterior</span>
+            <ArrowLeft size={18} />{" "}
+            <span className="d-none d-sm-inline fw-medium">Anterior</span>
           </button>
           <button
             className="btn btn-outline-secondary d-flex align-items-center gap-2 rounded-pill px-4"
             onClick={() => navigate(nextTeam ? `/team/${nextTeam.id}` : "/")}
             disabled={!nextTeam}
           >
-            <span className="d-none d-sm-inline fw-medium">Siguiente</span> <ArrowRight size={18} />
+            <span className="d-none d-sm-inline fw-medium">Siguiente</span>{" "}
+            <ArrowRight size={18} />
           </button>
         </div>
         <div className="d-flex gap-2 w-100 w-md-auto justify-content-center justify-content-md-end flex-wrap">
-          <button className="btn btn-primary d-flex align-items-center gap-2 rounded-pill shadow-sm" onClick={exportPDF}>
+          <button
+            className="btn btn-primary d-flex align-items-center gap-2 rounded-pill shadow-sm"
+            onClick={exportPDF}
+          >
             <Download size={18} /> <span className="fw-medium">PDF</span>
           </button>
-          <button className="btn btn-success d-flex align-items-center gap-2 rounded-pill shadow-sm" onClick={exportZip}>
+          <button
+            className="btn btn-success d-flex align-items-center gap-2 rounded-pill shadow-sm"
+            onClick={exportZip}
+          >
             <Download size={18} /> <span className="fw-medium">ZIP</span>
           </button>
-          <button className="btn btn-info text-white d-flex align-items-center gap-2 rounded-pill shadow-sm" onClick={shareSocial}>
+          <button
+            className="btn btn-info text-white d-flex align-items-center gap-2 rounded-pill shadow-sm"
+            onClick={shareSocial}
+          >
             <Share2 size={18} /> <span className="fw-medium">Compartir</span>
           </button>
         </div>
@@ -122,15 +133,23 @@ function TeamPage() {
 
       {/* Revista / Álbum (fondo simula papel que se adapta al modo oscuro) */}
       <div className="d-flex justify-content-center">
-        <div className="bg-body border border-secondary-subtle w-100 shadow-lg rounded-4 p-4 p-md-5 position-relative magazine-page theme-transition" ref={pageRef} style={{ maxWidth: '950px', minHeight: '1100px' }}>
-          
+        <div
+          className="bg-body border border-secondary-subtle w-100 shadow-lg rounded-4 p-4 p-md-5 position-relative magazine-page theme-transition"
+          ref={pageRef}
+          style={{ maxWidth: "950px", minHeight: "1100px" }}
+        >
           <div className="text-center mb-5 border-bottom border-primary border-4 pb-4">
             <h2 className="display-3 fw-black text-body text-uppercase mb-3 tracking-tight">
-              {team.name} <span className="drop-shadow-flag ms-2">{team.flag}</span>
+              {team.name}{" "}
+              <span className="drop-shadow-flag ms-2">{team.flag}</span>
             </h2>
             <div
               className="lead text-body-secondary mx-auto editable-description p-3 rounded-3"
-              style={{ maxWidth: '750px', border: '1px dashed transparent', outline: 'none' }}
+              style={{
+                maxWidth: "750px",
+                border: "1px dashed transparent",
+                outline: "none",
+              }}
               contentEditable
               suppressContentEditableWarning
               onBlur={handleDescriptionChange}
@@ -145,7 +164,6 @@ function TeamPage() {
               </div>
             ))}
           </div>
-          
         </div>
       </div>
     </div>
