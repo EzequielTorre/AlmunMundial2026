@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "file-saver": "^2.0.5",
+    "flag-icons": "^7.5.0",
     "html2pdf.js": "^0.14.0",
     "jszip": "^3.10.1",
     "lucide-react": "^1.14.0",

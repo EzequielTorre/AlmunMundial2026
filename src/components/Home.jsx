@@ -29,7 +29,9 @@ function Home() {
                     className="display-1 mb-4 drop-shadow-flag transition-all"
                     style={{ fontSize: "5rem" }}
                   >
-                    {team.flag}
+                    <span
+                      className={`fi fi-${team.flagCode} rounded shadow-sm`}
+                    ></span>
                   </div>
                   <h5 className="card-title fw-bold text-body m-0 text-uppercase tracking-wide text-center">
                     {team.name}

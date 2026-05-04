@@ -141,7 +141,9 @@ function TeamPage() {
           <div className="text-center mb-5 border-bottom border-primary border-4 pb-4">
             <h2 className="display-3 fw-black text-body text-uppercase mb-3 tracking-tight">
               {team.name}{" "}
-              <span className="drop-shadow-flag ms-2">{team.flag}</span>
+              <span
+                className={`fi fi-${team.flagCode} drop-shadow-flag ms-2 rounded`}
+              ></span>
             </h2>
             <div
               className="lead text-body-secondary mx-auto editable-description p-3 rounded-3"
